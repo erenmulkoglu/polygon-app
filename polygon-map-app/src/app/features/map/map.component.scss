@@ -1,0 +1,674 @@
+/* Harita Container */
+.map-container {
+  position: relative;
+  height: calc(100vh - 50px);
+}
+
+.map {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+}
+
+/* ÖZEL KONTROLLERİN DÜZENİ */
+.custom-controls {
+  position: absolute;
+  top: 75px;
+  left: 15px;
+  display: flex;
+  gap: 10px;
+  z-index: 1000;
+}
+
+/* BUTON TARZLARI */
+.control-btn {
+  background-color: #343a40;
+  color: #ffffff;
+  border: none;
+  padding: 3px;
+  border-radius: 6px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.2);
+
+  i {
+    pointer-events: none;
+  }
+
+  &:hover {
+    background-color: #495057;
+  }
+
+  &.active {
+    background-color: #17a2b8;
+  }
+}
+
+
+.draw-actions {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  gap: 10px;
+  z-index: 1000;
+}
+
+.btn-save {
+  background-color: #28a745;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn-save:hover {
+  background-color: #218838;
+}
+
+.btn-cancel {
+  background-color: #dc3545;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn-cancel:hover {
+  background-color: #c82333;
+}
+
+/* Zoom Butonları için Özel Stil */
+.custom-controls .control-btn:first-child,
+.custom-controls .control-btn:nth-child(2) {
+  background-color: #007bff;
+
+  &:hover {
+    background-color: #0056b3;
+  }
+}
+/* Düzenleme ve Silme Butonları */
+.edit-btn, .delete-btn, .details-btn {
+  background-color: #6c757d;
+  color: white;
+  padding: 8px;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+
+  &:hover {
+    background-color: #5a6268;
+  }
+}
+
+/* Tablo Düzeni */
+.polygon-list-scroll {
+  overflow-y: auto;
+  max-height: 200px;
+}
+
+.polygon-table {
+  width: 100%;
+  border-collapse: collapse;
+
+  th, td {
+    padding: 12px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+  }
+
+  th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+  }
+
+  tr:hover {
+    background-color: #f1f1f1;
+  }
+}
+
+/* Aktif Durum Butonu */
+.control-btn.active {
+  background-color: #28a745;
+
+  &:hover {
+    background-color: #218838;
+  }
+}
+/* Menü Çubuğu */
+/* Menü Çubuğu */
+.menu-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #ffffff;
+  padding: 10px;
+  z-index: 1000;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+}
+
+.dropdown {
+  position: relative;
+  margin-left: 620px;  
+}
+
+.dropbtn {
+  background-color: #007bff;
+  color: white;
+  padding: 12px 16px;
+  font-size: 16px;
+  border: none;
+  
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.dropbtn:hover {
+  background-color: #0056b3;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #ffffff;
+  box-shadow: 0px 8px 16px rgba(0,0,0,0.1);
+  z-index: 1001;
+  width: 220px;
+  border-radius: 4px;
+}
+
+
+.dropdown-content a {
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  color: #333;
+  transition: background-color 0.3s;
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.sidebar ::ng-deep .multiselect-dropdown {
+  width: 100% !important;
+  box-sizing: border-box;
+}
+
+
+/* Kontrol Butonları */
+.controls {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+  justify-content: center;
+
+  button {
+    padding: 10px 14px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+
+    &.btn-primary {
+      background-color: #007bff;
+      color: white;
+    }
+
+    &.btn-secondary {
+      background-color: #6c757d;
+      color: white;
+    }
+
+    &.btn-danger {
+      background-color: #dc3545;
+      color: white;
+    }
+
+    &.btn-warning {
+      background-color: #ffc107;
+      color: black;
+    }
+
+    &.btn-info {
+      background-color: #17a2b8;
+      color: white;
+    }
+
+    &.btn-dark {
+      background-color: #343a40;
+      color: white;
+    }
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+}
+/*  Meta Formun Ortalanması ve Tasarımı */
+.meta-form {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #ffffff;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  border-radius: 12px;
+  z-index: 1050;
+  width: 600px; /* Form genişliği artırıldı */
+  font-family: Arial, sans-serif;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Başlık Çubuğu */
+.form-header {
+  background-color: #007bff;
+  color: white;
+  padding: 12px;
+  font-size: 18px;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+h3 {
+  margin: 0;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: color 0.2s;
+
+  &:hover {
+    color: #ff4d4d;
+  }
+}
+
+/* Form Gövdesi */
+.form-body {
+  padding: 16px;
+}
+
+.form-row {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 12px;
+}
+
+.form-group {
+  flex: 1;
+}
+
+label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: bold;
+  color: #343a40;
+  font-size: 14px;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  transition: border-color 0.3s ease;
+
+  &:focus {
+    border-color: #007bff;
+    outline: none;
+  }
+}
+
+/* Checkbox Yapısı */
+input[type="checkbox"] {
+  margin-right: 6px;
+}
+
+.form-row .form-group:last-child {
+  margin-right: 0;
+}
+
+/* Buton Yapısı */
+.form-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.btn-save {
+  background-color: #28a745;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+
+  &:hover {
+    background-color: #218838;
+  }
+}
+
+.btn-cancel {
+  background-color: #dc3545;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+
+  &:hover {
+    background-color: #c82333;
+  }
+}
+
+/* Mesafe Ölçüm Tooltip */
+.tooltip {
+  position: absolute;
+  background-color: #ffffff;
+  color: #333333;
+  padding: 4px 8px;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  font-size: 14px;
+  box-shadow: 0px 2px 6px rgba(0,0,0,0.1);
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.tooltip-measure {
+  background-color: #ff0000;
+  color: #ffffff;
+  border-color: #ff0000;
+}
+
+.tooltip-static {
+  background-color: #ff0000;
+  color: #ffffff;
+  border-color: #ff0000;
+  opacity: 0.9;
+}
+
+/* Çizgi ve Nokta Tasarımı */
+.ol-viewport {
+  .ol-overlaycontainer-stopevent {
+    position: absolute;
+  }
+}
+
+.control-btn {
+  background-color: #343a40;
+  color: white;
+  padding: 8px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+
+  &:hover {
+    background-color: #495057;
+  }
+
+  &.active {
+    background-color: #ff0000;
+  }
+}
+
+
+/* Kutuya Gölge ve Kenar */
+.meta-form input {
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.meta-form input:focus {
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.25);
+}
+
+/* Sağ Tık Menüsü */
+.context-menu {
+  position: absolute;
+  background-color: #ffffff;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  border-radius: 4px;
+  overflow: hidden;
+  font-size: 14px;
+}
+
+.context-menu-item {
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  color: #333;
+}
+
+.context-menu-item:hover {
+  background-color: #f0f0f0;
+}
+
+/* Katman Butonu Yapısı */
+.layer-menu-wrapper {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  z-index: 1000;
+}
+
+.layer-btn {
+  background-color: #007bff;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.layer-btn:hover {
+  background-color: #0056b3;
+}
+
+/* Katman Menüsü */
+.layer-menu {
+  position: absolute;
+  top: 60px;
+  right: -280px;
+  width: 250px;
+  height: 572px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border-radius: 12px;
+  padding: 15px;
+  transition: right 0.3s ease;
+  z-index: 999;
+}
+
+.layer-menu.open {
+  right: -13px;
+}
+
+/* Başlık Yapısı */
+.layer-header {
+  padding: 12px;
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #ddd;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+.date-info {
+  display: flex;
+  justify-content: space-between;
+}
+
+.day {
+  font-size: 16px;
+  font-weight: bold;
+  color: #343a40;
+}
+
+.date {
+  font-size: 14px;
+  color: #868e96;
+}
+
+/* Katman Seçenekleri */
+.layer-option {
+  display: flex;
+  align-items: center;
+  padding: 12px;
+  gap: 12px;
+  font-size: 16px;
+  color: #495057;
+  cursor: pointer;
+  border-bottom: 1px solid #e9ecef;
+  transition: background-color 0.2s ease;
+}
+
+.layer-option img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+.layer-option:last-child {
+  border-bottom: none;
+}
+
+.layer-option:hover {
+  background-color: #f1f3f5;
+}
+
+/* Aktif Katman */
+.layer-option.active {
+  background-color: #e9ecef;
+  font-weight: bold;
+}
+
+/* Sidebar Stilleri */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -280px; // Başlangıçta gizli
+  width: 250px;
+  margin-top: 165px;
+  
+  height: 80vh;
+  background-color: #f4f4f4;
+  box-shadow: 2px 0 5px rgba(0,0,0,0.2);
+  padding: 20px;
+  transition: left 0.3s ease;
+  z-index: 999;
+
+  &.open {
+    left: 0; // Açıldığında görünür hale getir
+    
+  }
+
+  .sidebar-toggle {
+    position: absolute;
+    top: 20px;
+    right: -30px;
+    width: 30px;
+    height: 30px;
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.2s ease;
+    
+    &:hover {
+      background-color: #0056b3;
+    }
+  }
+
+  .form-group {
+    margin-bottom: 20px;
+
+    label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    select {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 14px;
+      transition: border-color 0.2s;
+
+      &:focus {
+        border-color: #007bff;
+        outline: none;
+      }
+    }
+  }
+}
+
+.sidebar-header {
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 1px;
+  margin-bottom: 12px;
+  color: #007bff;
+}
+
+.sidebar-content {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+
+/* Multiselect dropdown’ların sidebar dışına taşmasını önle */
+.sidebar ::ng-deep .dropdown-btn {
+  width: 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box;
+  overflow: hidden;
+}

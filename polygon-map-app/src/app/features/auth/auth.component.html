@@ -1,0 +1,31 @@
+<div class="auth-wrapper">
+  <div class="auth-container">
+    <!-- Giriş Yap -->
+    <h2 class="form-title">Giriş Yap</h2>
+    <form (ngSubmit)="login()" class="form-container">
+      <input type="email" [(ngModel)]="email" name="email" placeholder="Email" required />
+      <input type="password" [(ngModel)]="password" name="password" placeholder="Şifre" required />
+      <button type="submit" class="submit-btn">Giriş Yap</button>
+    </form>
+
+    <!-- Kayıt Ol -->
+    <h2 class="form-title">Hesabın Yok mu? Kayıt Ol</h2>
+    <form (ngSubmit)="register()" class="form-container">
+      <input type="text" [(ngModel)]="registerName" name="registerName" placeholder="Ad Soyad" required />
+      <input type="email" [(ngModel)]="registerEmail" name="registerEmail" placeholder="Email" required />
+      <input type="password" [(ngModel)]="registerPassword" name="registerPassword" placeholder="Şifre" required />
+      <input type="password" [(ngModel)]="registerConfirmPassword" name="registerConfirmPassword" placeholder="Şifre Tekrar" required />
+
+      <!--  Cinsiyet -->
+      <div class="gender-container">
+        <label>Cinsiyet:</label>
+        <div>
+          <input type="radio" [(ngModel)]="registerGender" name="gender" value="male" required /> Erkek
+          <input type="radio" [(ngModel)]="registerGender" name="gender" value="female" required /> Kadın
+        </div>
+      </div>
+
+      <button type="submit" class="submit-btn">Kayıt Ol</button>
+    </form>
+  </div>
+</div>

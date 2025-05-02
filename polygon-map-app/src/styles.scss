@@ -1,0 +1,12 @@
+/* You can add global styles to this file, and also import other style files */
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden; // Scrollbar'ı tamamen kaldırır
+  width: 100%;
+  height: 100%;
+}
+
+.auth-wrapper {
+  overflow-y: auto; // Giriş/Kayıt ol sayfasında içeriğin taşmasını önler
+}

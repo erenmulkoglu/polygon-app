@@ -1,0 +1,10 @@
+<div class="polygon-list">
+    <h3>Poligonlar</h3>
+    <ul>
+      <li *ngFor="let polygon of polygons; let i = index">
+        Alan: {{ polygon.area | number }} m²
+        <button (click)="onDelete(i)">Sil</button>
+      </li>
+    </ul>
+  </div>
+  

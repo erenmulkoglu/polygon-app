@@ -1,0 +1,19 @@
+<div class="header">
+  <div class="header-left">
+    <a routerLink="/" class="logo">
+      <img src="assets/icons/polygon-logo.png" alt="Logo" class="logo" />
+    </a>
+    <span class="app-title">Polygon Uygulaması</span>
+  </div>
+
+  <div class="header-links">
+    <a *ngIf="authService.isLoggedIn()" [routerLink]="['/map']" class="nav-link" routerLinkActive="active-link">Harita - </a> 
+    <a *ngIf="authService.isLoggedIn()" [routerLink]="['/profile']" class="nav-link" routerLinkActive="active-link">Profil - </a> 
+    <a *ngIf="!isLoggedIn" [routerLink]="['/register']" class="nav-link" routerLinkActive="active-link"> Kayıt Ol</a>
+  </div>
+
+  <div class="header-right">
+    <span *ngIf="isLoggedIn && userName">Hoşgeldin, {{ userName }}!</span>
+    <button *ngIf="isLoggedIn" (click)="onLogout()" class="btn-danger">Çıkış Yap</button>
+  </div>
+</div>

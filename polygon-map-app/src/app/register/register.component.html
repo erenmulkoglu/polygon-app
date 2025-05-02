@@ -1,0 +1,69 @@
+<div class="register-wrapper">
+  <div class="register-container">
+    <h2>Kayıt Ol</h2>
+    
+    <form [formGroup]="registerForm" (ngSubmit)="onRegister()">
+      <!-- Ad Soyad -->
+      <div class="form-group">
+        <input 
+          type="text" 
+          placeholder="Ad Soyad" 
+          formControlName="name"
+          required
+        />
+      </div>
+
+      <!-- Email -->
+      <div class="form-group">
+        <input 
+          type="email" 
+          placeholder="Email" 
+          formControlName="email"
+          required
+        />
+      </div>
+
+      <!-- Şifre -->
+      <div class="form-group">
+        <input 
+          type="password" 
+          placeholder="Şifre" 
+          formControlName="password"
+          required
+        />
+      </div>
+
+      <!-- Şifre Tekrar -->
+      <div class="form-group">
+        <input 
+          type="password" 
+          placeholder="Şifre Tekrar" 
+          formControlName="confirmPassword"
+          required
+        />
+        <span *ngIf="!passwordsMatch" class="error">
+          Şifreler eşleşmiyor!
+        </span>
+      </div>
+
+      <!-- Cinsiyet Seçimi -->
+      <div class="form-group gender-group">
+        <label>Cinsiyet:</label>
+        <label>
+          <input type="radio" value="Erkek" formControlName="gender"> Erkek
+        </label>
+        <label>
+          <input type="radio" value="Kadın" formControlName="gender"> Kadın
+        </label>
+      </div>
+  
+      <button type="submit" class="btn-primary" [disabled]="isLoading">
+        {{ isLoading ? 'Kaydediliyor...' : 'Kayıt Ol' }}
+      </button>
+      
+      <!-- Başarı ve Hata Mesajları -->
+      <p class="success" *ngIf="successMessage">{{ successMessage }}</p>
+      <p class="error" *ngIf="errorMessage">{{ errorMessage }}</p>
+    </form>
+  </div>
+</div>

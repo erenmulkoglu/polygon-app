@@ -1,0 +1,221 @@
+<div class="map-container">
+  <div id="map" class="map"></div>
+    
+<!-- Sidebar -->
+<div class="sidebar" [ngClass]="{'open': isSidebarOpen}">
+  <button class="sidebar-toggle" (click)="toggleSidebar()">
+    {{ isSidebarOpen ? '❮' : '❯' }}
+  </button>    <div class="sidebar-header">
+      <h3>📌 CBS</h3>
+    </div>  
+    <div class="sidebar-content">
+      <label>Harita Adı:</label>
+      <ng-multiselect-dropdown
+        [placeholder]="'Harita Adı Seçiniz'"
+        [data]="haritaDropdownList"
+        [(ngModel)]="selectedHaritalar"
+        [settings]="dropdownSettings"
+        (onSelect)="onHaritalarSec()"
+        (onDeSelect)="onHaritalarSec()"
+        (onSelectAll)="onHaritalarSec()"
+        (onDeSelectAll)="onHaritalarSec()"
+      ></ng-multiselect-dropdown>
+      
+      <label>İl:</label>
+      <ng-multiselect-dropdown
+        [placeholder]="'İl Seçiniz'"
+        [data]="ilDropdownList"
+        [(ngModel)]="selectedIller"
+        [settings]="dropdownSettings"
+        (onSelect)="onIllerSec()"
+        (onDeSelect)="onIllerSec()"
+        (onSelectAll)="onIllerSec()"
+        (onDeSelectAll)="onIllerSec()"
+      ></ng-multiselect-dropdown>
+      
+      <label>İlçe:</label>
+      <ng-multiselect-dropdown
+        [placeholder]="'İlçe Seçiniz'"
+        [data]="ilceDropdownList"
+        [(ngModel)]="selectedIlceler"
+        [settings]="dropdownSettings"
+        (onSelect)="onIlcelerSec()"
+        (onDeSelect)="onIlcelerSec()"
+        (onSelectAll)="onIlcelerSec()"
+        (onDeSelectAll)="onIlcelerSec()"
+      ></ng-multiselect-dropdown>
+      
+    </div>
+  </div> 
+
+    <!-- Sağ Tık Menüsü -->
+    <div id="context-menu" class="context-menu" style="display: none;">
+      <div class="context-menu-item" id="edit-feature">🛠️ Kenar Düzelt</div>
+      <div class="context-menu-item" id="delete-feature">🗑️ Sil</div>
+    </div>
+    
+    <!-- Menü Çubuğu -->
+    <div class="menu-bar">
+      <div class="dropdown">
+        <button class="dropbtn">📏 Ölçüm İşlemleri</button>
+        <div class="dropdown-content">
+          <a href="#" (click)="startDrawing()">✏️ Çizim Aracı</a>
+        </div>
+      </div>
+    </div>    
+  <!-- Özelleştirilmiş Kontroller -->
+  <div class="custom-controls">
+    <!-- Zoom In -->
+    <button class="control-btn" (click)="zoomIn()" title="Zoom In">
+      +
+    </button>
+
+    <!-- Zoom Out -->
+    <button class="control-btn" (click)="zoomOut()" title="Zoom Out">
+      -
+    </button>
+
+    <!-- Poligonları Kaydet -->
+    <button class="control-btn" (click)="savePolygonMeta()" title="Kaydet">
+      💾    </button>
+
+
+    <!-- Poligonları Yükle -->
+    <button class="control-btn" (click)="loadPolygons()" title="Yükle">
+      📥
+    </button>
+    <!-- Poligonları Temizle -->
+    <button class="control-btn" (click)="clearPolygons()" title="Temizle">
+      🗑️
+    </button>    
+    <!-- Sürükleme Modu -->
+    <button 
+      class="control-btn" 
+      (click)="toggleTranslateMode()" 
+      [ngClass]="{'active': dragMode}"
+      title="Sürükleme Modu"
+    >
+    🚀
+    </button>
+      <!-- Mesafe Ölç Butonu -->
+  <button 
+  class="control-btn" 
+  (click)="startMeasure()" 
+  [ngClass]="{'active': isMeasuring}" 
+  title="Mesafe Ölç">
+  📏
+</button>
+
+<!-- Sıfırla Butonu -->
+<button class="control-btn" (click)="resetMeasure()" title="Sıfırla">🔄</button>
+  </div>
+  <div *ngIf="isDrawingComplete" class="draw-actions">
+    <button class="btn-save" (click)="savePolygonMeta()">Kaydet</button>
+    <button class="btn-cancel" (click)="cancelDrawing()">İptal</button>
+  </div>
+
+  <!-- Çizim Bittikten Sonra Açılan Form -->
+<div *ngIf="showMetaForm" class="meta-form">
+  <div class="form-container">
+    <!-- Başlık Çubuğu -->
+    <div class="form-header">
+      <h3>Ölçüm Ekle</h3>
+      <button class="close-btn" (click)="cancelDrawing()">✖</button>
+    </div>
+
+    <!-- Form Alanı -->
+    <div class="form-body">
+      <div class="form-row">
+        <div class="form-group">
+          <label for="name">Harita Adı:</label>
+          <input type="text" id="name" [(ngModel)]="polygonMeta.name" required />
+        </div>
+        <div class="form-group">
+          <label for="city">İl:</label>
+          <input type="text" id="city" [(ngModel)]="polygonMeta.city" required />
+        </div>
+        <div class="form-group">
+          <label for="district">İlçe:</label>
+          <input type="text" id="district" [(ngModel)]="polygonMeta.district" required />
+        </div>
+      </div>    
+    </div>
+    <!-- Kayıt ve İptal Butonları -->
+    <div class="form-footer">
+      <button class="btn-cancel" (click)="cancelDrawing()">İPTAL</button>
+      <button class="btn-save" (click)="savePolygonMeta()">KAYDET</button>
+    </div>
+  </div>
+</div>
+   <!-- Poligon Listesi -->
+  <div class="polygon-list-container" *ngIf="isPolygonInfoVisible">
+    <div class="polygon-list-scroll">
+      <table class="polygon-table">
+        <thead>
+          <tr>
+            <th>Harita Adı</th>
+            <th>İl</th>
+            <th>İlçe</th>
+            <th>Alan</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let polygon of polygons; let i = index">
+            <td>{{ polygon.name || '-' }}</td>
+            <td>{{ polygon.city || '-' }}</td>
+            <td>{{ polygon.district || '-' }}</td>
+            <td>{{ polygon.area | number }} m²</td>
+            <td>
+              <button (click)="editPolygon(i)" class="edit-btn">
+                <i class="fas fa-edit"></i>
+              </button>
+              <button (click)="deletePolygon(i)" class="delete-btn">
+                <i class="fas fa-trash-alt"></i>
+              </button>
+              <button (click)="getPolygonStats(polygon)" class="details-btn">
+                <i class="fas fa-info-circle"></i>
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <!-- Katmanları Aç/Kapa Butonu -->
+ <div class="layer-menu-wrapper">
+  <button class="layer-btn" (click)="toggleLayerMenu()">Katmanları Aç/Kapa</button>
+
+  <!-- Katman Menüsü -->
+  <div class="layer-menu" [ngClass]="{'open': isLayerMenuOpen}">
+    <!-- Tarih ve Gün Bilgisi -->
+    <div class="layer-header">
+      <div class="date-info">
+        <div class="day">{{ currentDay }}</div>
+        <div class="date">{{ currentDate }}</div>
+      </div>
+    </div>
+
+    <!-- Harita Görünümü -->
+    <div class="layer-option" (click)="setLayer('osm'); toggleLayerMenu()">
+      <img src="assets/map-icon.png" alt="Map Icon" />
+      Harita Görünümü
+    </div>
+
+    <!-- Uydu Görünümü -->
+    <div class="layer-option" (click)="setLayer('satellite'); toggleLayerMenu()">
+      <img src="assets/satellite-icon.png" alt="Satellite Icon" />
+      Uydu Görünümü
+    </div>
+
+    <!-- Arazi Görünümü -->
+    <div class="layer-option" (click)="setLayer('terrain'); toggleLayerMenu()">
+      <img src="assets/terrain-icon.png" alt="Terrain Icon" />
+      Arazi Görünümü
+    </div>
+  </div>
+</div>
+
+</div>
+
+ 
