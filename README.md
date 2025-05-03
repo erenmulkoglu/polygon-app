@@ -1,4 +1,4 @@
-                                                                    POLYGON APP -  POLIGON UYGULAMASI
+POLYGON APP -  POLIGON UYGULAMASI
 
 
 
