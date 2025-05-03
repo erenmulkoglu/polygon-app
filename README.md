@@ -4,8 +4,9 @@ NodeJs, Angular, TypeScript, CSS, HTML, Bootstrap, MongoDB teknolojilerini kulla
 
 
 Ek Özellikler:
+
 ✔ Kesişen haritalar siyah renkte.
-✔ Her kullanıcının kendine ait verileri yansıtılır. 
+✔ Her kullanıcının kendine ait verileri yansıtılır.
 ✔ Giriş yaptıktan sonra haritaya erişilir.
 ✔ Katmanları aç/kapa sekmesinde Altlıklar adlı menüden harita görünümü ayarlayabilirsiniz.
 ✔ Side-bar kısmında meta verileri (Harita Adı, İl ve İlçe) girip filtrelemeyi gelişmiş şekilde yapabilirsiniz.
