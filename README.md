@@ -53,6 +53,7 @@ NodeJs, Angular, TypeScript, CSS, HTML, Bootstrap, MongoDB teknolojilerini kulla
 ```bash
 git clone https://github.com/kullanici-adi/polygon-app.git
 cd polygon-app
+```
 
 
 ![image](https://github.com/user-attachments/assets/94d5d2e8-90da-444d-b1f5-e88d6939b534)
