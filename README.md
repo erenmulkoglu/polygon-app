@@ -6,11 +6,17 @@ NodeJs, Angular, TypeScript, CSS, HTML, Bootstrap, MongoDB teknolojilerini kulla
 Ek Özellikler:
 
 ✔ Kesişen haritalar siyah renkte.
+
 ✔ Her kullanıcının kendine ait verileri yansıtılır.
+
 ✔ Giriş yaptıktan sonra haritaya erişilir.
+
 ✔ Katmanları aç/kapa sekmesinde Altlıklar adlı menüden harita görünümü ayarlayabilirsiniz.
+
 ✔ Side-bar kısmında meta verileri (Harita Adı, İl ve İlçe) girip filtrelemeyi gelişmiş şekilde yapabilirsiniz.
+
 ✔ Mesafe ölçme, poligon sıfırlama, temizleme ve sürükleme özellikleri aktif.
+
 
 
 ![image](https://github.com/user-attachments/assets/94d5d2e8-90da-444d-b1f5-e88d6939b534)
