@@ -1,8 +1,8 @@
 
 ## POLYGON APP -  POLİGON UYGULAMASI
 
-
-
+Polygon App, kullanıcıların harita üzerinde çokgen (poligon) çizimleri yapmasını, kaydetmesini, düzenlemesini ve görüntülemesini sağlayan bir web uygulamasıdır. Her kullanıcı yalnızca kendi poligonlarını yönetebilir.
+Polygon App is a web application that allows users to draw, save, edit and view polygons (polygons) on the map. Each user can only manage their own polygons.)
 
 NodeJs, Angular, TypeScript, CSS, HTML, Bootstrap, MongoDB teknolojilerini kullanarak poligon çizim uygulamasını sıfırdan inşa ettim. Bu uygulamayla üyelik oluşturabilirsiniz. O üyeliğe giriş yapıp kullanıcı profilinizi düzenleyebilirsiniz. Herhangi bir ülkede (Örn; Türkiye) bir alan belirleyip bölge, sınır, tarla çizimi yapıp veritabanına koordinat olarak kaydedebilirsiniz. Tarlada ekim yapıyorsanız bu alanın daha önce kullanılıp kullanılmadığının tespitini yapabilirsiniz.
 
@@ -10,19 +10,42 @@ NodeJs, Angular, TypeScript, CSS, HTML, Bootstrap, MongoDB teknolojilerini kulla
 
 
 
-### 📋 Ek Özellikler:
+### 🚀 Özellikler:
 
-✔ Kesişen haritalar siyah renkte.
+✅ Giriş & Kayıt sistemi (JWT tabanlı)
 
-✔ Her kullanıcının kendine ait verileri yansıtılır.
+🧭 Harita üzerinde poligon çizimi
 
-✔ Giriş yaptıktan sonra haritaya erişilir.
+🎨 Alan büyüklüğüne göre otomatik renk atama
 
-✔ Katmanları aç/kapa sekmesinde Altlıklar adlı menüden harita görünümü ayarlayabilirsiniz.
+⚫ Kesişen poligonların siyaha dönüşmesi
 
-✔ Side-bar kısmında meta verileri (Harita Adı, İl ve İlçe) girip filtrelemeyi gelişmiş şekilde yapabilirsiniz.
+🗺️ Katmanları aç/kapa sekmesinde Altlıklar adlı menüden katman seçimi (OSM, Uydu, Arazi)
 
-✔ Mesafe ölçme, poligon sıfırlama, temizleme ve sürükleme özellikleri aktif.
+📦 MongoDB ile kullanıcı ve poligon verisi kaydı
+
+🔐 Şifre güncelleme (mevcut şifre kontrolü ile)
+
+📊 Poligon istatistikleri (alan, çevre, merkez)
+
+📂 Side-bar kısmında meta verileri (Harita Adı, İl ve İlçe) girip filtrelemeyi gelişmiş şekilde yapabilirsiniz.
+
+🧩 Mesafe ölçme, poligon sıfırlama, temizleme ve sürükleme özellikleri aktif.
+
+
+## 🧰 Kullanılan Teknolojiler
+
+### Backend:
+- Node.js + Express.js
+- MongoDB + Mongoose
+- bcrypt & JWT
+- CORS & dotenv
+
+### Frontend:
+- Angular
+- OpenLayers (harita çizimi için)
+- Bootstrap / Tailwind (opsiyonel)
+- ngx-multiselect-dropdown
 
 
 
