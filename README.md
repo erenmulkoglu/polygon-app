@@ -48,11 +48,19 @@ NodeJs, Angular, TypeScript, CSS, HTML, Bootstrap, MongoDB teknolojilerini kulla
 - Bootstrap / Tailwind (opsiyonel)
 - ngx-multiselect-dropdown
 
-## Klonla:
+## ⚙️ Kurulum
+
+### 1. Klonla:
 
 ```bash
 git clone https://github.com/kullanici-adi/polygon-app.git
 cd polygon-app
+```
+### 2. Backend Kurulumu:
+```bash
+cd backend
+npm install
+npm run dev
 ```
 
 
