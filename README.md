@@ -1,6 +1,5 @@
 
-## ![image](https://github.com/user-attachments/assets/205b9d8e-8b55-4d43-b981-87ef32feaa88)
-POLYGON APP -  POLİGON UYGULAMASI
+## POLYGON APP -  POLİGON UYGULAMASI
 
 
 
