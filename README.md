@@ -70,5 +70,16 @@ MONGO_URI=mongodb://localhost:27017/polygon-app
 JWT_SECRET=senin-gizli-anahtarın
 ```
 
+### 3. Frontend Kurulumu:
+```bash
+cd frontend
+npm install
+ng serve --open
+```
+
+Uygulama http://localhost:4200 adresinde çalışacaktır.
+
+
+
 
 ![image](https://github.com/user-attachments/assets/94d5d2e8-90da-444d-b1f5-e88d6939b534)
