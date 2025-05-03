@@ -1,4 +1,4 @@
-                                                                    <b>POLYGON APP -  POLIGON UYGULAMASI</b>
+                                                                    POLYGON APP -  POLIGON UYGULAMASI
 
 
 
