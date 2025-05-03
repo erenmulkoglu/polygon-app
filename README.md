@@ -1,4 +1,7 @@
-POLYGON APP -  POLIGON UYGULAMASI
+
+
+## POLYGON APP -  POLIGON UYGULAMASI
+
 
 
 
@@ -7,7 +10,8 @@ NodeJs, Angular, TypeScript, CSS, HTML, Bootstrap, MongoDB teknolojilerini kulla
 (I built a polygon drawing application from scratch using NodeJs, Angular, TypeScript, CSS, HTML, Bootstrap, MongoDB technologies. You can create a membership with this application. You can log in to that membership and edit your user profile. You can determine an area in any country (e.g. Turkey) and draw a region, border, field and save it as a coordinate in the database. If you are planting in the field, you can determine whether this area has been used before.)
 
 
-Ek Özellikler:
+
+### 📋 Ek Özellikler:
 
 ✔ Kesişen haritalar siyah renkte.
 
@@ -20,6 +24,7 @@ Ek Özellikler:
 ✔ Side-bar kısmında meta verileri (Harita Adı, İl ve İlçe) girip filtrelemeyi gelişmiş şekilde yapabilirsiniz.
 
 ✔ Mesafe ölçme, poligon sıfırlama, temizleme ve sürükleme özellikleri aktif.
+
 
 
 
