@@ -62,6 +62,13 @@ cd backend
 npm install
 npm run dev
 ```
+.env dosyası oluştur ve aşağıdakileri ekle:
+
+```bash
+PORT=5000
+MONGO_URI=mongodb://localhost:27017/polygon-app
+JWT_SECRET=senin-gizli-anahtarın
+```
 
 
 ![image](https://github.com/user-attachments/assets/94d5d2e8-90da-444d-b1f5-e88d6939b534)
