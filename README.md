@@ -2,6 +2,7 @@
 ## POLYGON APP -  POLİGON UYGULAMASI
 
 Polygon App, kullanıcıların harita üzerinde çokgen (poligon) çizimleri yapmasını, kaydetmesini, düzenlemesini ve görüntülemesini sağlayan bir web uygulamasıdır. Her kullanıcı yalnızca kendi poligonlarını yönetebilir.
+
 (Polygon App is a web application that allows users to draw, save, edit and view polygons (polygons) on the map. Each user can only manage their own polygons.)
 
 NodeJs, Angular, TypeScript, CSS, HTML, Bootstrap, MongoDB teknolojilerini kullanarak poligon çizim uygulamasını sıfırdan inşa ettim. Bu uygulamayla üyelik oluşturabilirsiniz. O üyeliğe giriş yapıp kullanıcı profilinizi düzenleyebilirsiniz. Herhangi bir ülkede (Örn; Türkiye) bir alan belirleyip bölge, sınır, tarla çizimi yapıp veritabanına koordinat olarak kaydedebilirsiniz. Tarlada ekim yapıyorsanız bu alanın daha önce kullanılıp kullanılmadığının tespitini yapabilirsiniz.
