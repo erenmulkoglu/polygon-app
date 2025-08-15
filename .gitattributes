@@ -1,3 +1,5 @@
 polygon-app-backend/server.js linguist-vendored=true
 polygon-map-app/src/utils/measure.js linguist-vendored=true
 polygon-app-backend/src/models/User.js linguist-vendored=true
+polygon-app-backend/src/services/polygon.service.js linguist-vendored=true
+polygon-app-backend/src/controllers/polygon.controller.js linguist-vendored=true
