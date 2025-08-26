@@ -18,3 +18,6 @@ polygon-map-app/src/app/services/api.service.ts linguist-vendored
 polygon-map-app/src/app/services/auth.interceptor.ts linguist-vendored
 polygon-map-app/src/app/services/auth.service.ts linguist-vendored
 polygon-map-app/src/app/services/profile.service.ts linguist-vendored
+polygon-map-app/src/app/shared/shared.module.ts linguist-vendored
+polygon-map-app/src/app/statistics/statistics.component.ts linguist-vendored
+polygon-map-app/src/app/services/profile.service.ts linguist-vendored
