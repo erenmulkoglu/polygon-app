@@ -1,1 +1,20 @@
-
+polygon-map-app/src/app/app-routing.module.ts linguist-vendored
+polygon-map-app/src/app/app.component.spec.ts linguist-vendored
+polygon-map-app/src/app/app.component.ts linguist-vendored
+polygon-map-app/src/app/app.config.ts linguist-vendored
+polygon-map-app/src/app/app.module.ts linguist-vendored
+polygon-map-app/src/app/app.routes.ts linguist-vendored
+polygon-map-app/src/app/components/header/header.component.spec.ts linguist-vendored
+polygon-map-app/src/app/components/header/header.component.ts linguist-vendored
+polygon-map-app/src/app/core/core.module.ts linguist-vendored
+polygon-map-app/src/app/features/features.module.ts linguist-vendored
+polygon-map-app/src/app/material/material.module.ts linguist-vendored
+polygon-map-app/src/app/polygon-list/polygon-list.component.ts linguist-vendored
+polygon-map-app/src/app/register/register.component.spec.ts linguist-vendored
+polygon-map-app/src/app/register/register.component.spec.ts linguist-vendored
+polygon-map-app/src/app/register/register.component.ts linguist-vendored
+polygon-map-app/src/app/services/api.service.spec.ts linguist-vendored
+polygon-map-app/src/app/services/api.service.ts linguist-vendored
+polygon-map-app/src/app/services/auth.interceptor.ts linguist-vendored
+polygon-map-app/src/app/services/auth.service.ts linguist-vendored
+polygon-map-app/src/app/services/profile.service.ts linguist-vendored
