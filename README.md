@@ -11,30 +11,30 @@ NodeJs, Angular, TypeScript, CSS, HTML, Bootstrap, MongoDB teknolojilerini kulla
 
 
 
-### 🚀 Özellikler:
+### Özellikler:
 
-✅ Giriş & Kayıt sistemi (JWT tabanlı)
+-  Giriş & Kayıt sistemi (JWT tabanlı)
 
-🧭 Harita üzerinde poligon çizimi
+- Harita üzerinde poligon çizimi
 
-🎨 Alan büyüklüğüne göre otomatik renk atama
+- Alan büyüklüğüne göre otomatik renk atama
 
-⚫ Kesişen poligonların siyaha dönüşmesi
+- Kesişen poligonların siyaha dönüşmesi
 
-🗺️ Katmanları aç/kapa sekmesinde Altlıklar adlı menüden katman seçimi (OSM, Uydu, Arazi)
+- Katmanları aç/kapa sekmesinde Altlıklar adlı menüden katman seçimi (OSM, Uydu, Arazi)
 
-📦 MongoDB ile kullanıcı ve poligon verisi kaydı
+- MongoDB ile kullanıcı ve poligon verisi kaydı
 
-🔐 Şifre güncelleme (mevcut şifre kontrolü ile)
+- Şifre güncelleme (mevcut şifre kontrolü ile)
 
-📊 Poligon istatistikleri (alan, çevre, merkez)
+- Poligon istatistikleri (alan, çevre, merkez)
 
-📂 Side-bar kısmında meta verileri (Harita Adı, İl ve İlçe) girip filtrelemeyi gelişmiş şekilde yapabilirsiniz.
+- Side-bar kısmında meta verileri (Harita Adı, İl ve İlçe) girip filtrelemeyi gelişmiş şekilde yapabilirsiniz.
 
-🧩 Mesafe ölçme, poligon sıfırlama, temizleme ve sürükleme özellikleri aktif.
+- Mesafe ölçme, poligon sıfırlama, temizleme ve sürükleme özellikleri aktif.
 
 
-## 🧰 Kullanılan Teknolojiler
+## Kullanılan Teknolojiler
 
 ### Backend:
 - Node.js + Express.js
@@ -83,7 +83,7 @@ Uygulama http://localhost:4200 adresinde çalışacaktır.
 ![image](https://github.com/user-attachments/assets/94d5d2e8-90da-444d-b1f5-e88d6939b534)
 
 
-## 👤 Geliştirici
+## Geliştirici
 Eren Mülkoğlu
 
 LinkedIn: https://www.linkedin.com/in/erenmulkoglu96/
