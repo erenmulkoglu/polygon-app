@@ -86,8 +86,8 @@ Uygulama http://localhost:4200 adresinde çalışacaktır.
 ## Geliştirici
 Eren Mülkoğlu
 
-LinkedIn: https://www.linkedin.com/in/erenmulkoglu96/
+LinkedIn: https://www.linkedin.com/in/erenmulkoglu96/](https://www.linkedin.com/in/erenmulkoglu/
 
 E-Posta: erenmulkoglu@gmail.com
 
-Twitter: https://x.com/erenmulkoglu96
+Twitter: https://x.com/erenmulkoglu96](https://x.com/erenmulkoglu
